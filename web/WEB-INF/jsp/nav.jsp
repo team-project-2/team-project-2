@@ -115,8 +115,8 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="?lang=en"><s:message code="label.nav.en" text="English"/></a>
-                        <a href="?lang=vi"><s:message code="label.nav.vi" text="Vietnamese"/></a>
+                        <a href="../report/index.htm?lang=en"><s:message code="label.nav.en" text="English"/></a>
+                        <a href="../report/index.htm?lang=vi"><s:message code="label.nav.vi" text="Vietnamese"/></a>
                         <a href="../login/showChangePass.htm"><s:message code="label.nav.changePass" text="Change Password"/></a>
                     </li>
                 </ul>
