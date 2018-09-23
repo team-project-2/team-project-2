@@ -18,7 +18,7 @@ public class ConnectionDB {
     public static Connection getConn() {
         try {
             String connectionUrl
-                    = "jdbc:sqlserver://localhost:1433;databaseName=SOF302_ASM_PS05357;user=sa;password=123";
+                    = "jdbc:sqlserver://localhost:1433;databaseName=duan2_nhom3;user=sa;password=123";
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con
                     = DriverManager.getConnection(connectionUrl);

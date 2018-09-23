@@ -96,7 +96,7 @@ public class UsersDAO {
         return false;
     }
 
-    public boolean Login(String username, String password) {
+    public String Login(String username, String password) {
         try {
             Connection conn = ConnectionDB.getConn();
             String sql = "Select * from Users where Username like ? and Password like ?";
@@ -105,12 +105,21 @@ public class UsersDAO {
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                return true;
+                int roleDB = rs.getInt(4);
+                Users a = new Users();
+                a.setRole(roleDB);
+                if (roleDB == 1) {
+                    return "admin";
+                }else if(roleDB == 2){
+                    return "ketoan";
+                }else if(roleDB == 3){
+                    return "nhanvien";
+                }
             }
         } catch (Exception e) {
             System.out.println(e);
         }
-        return false;
+        return "false";
     }
 
     public boolean UpdatePass(String username, String password) {
@@ -147,7 +156,7 @@ public class UsersDAO {
 
     public void getPassword(String password, String email) {
         try {
-           Connection conn = ConnectionDB.getConn();
+            Connection conn = ConnectionDB.getConn();
             String sql = "Update Users set Password = ? where Username = ?";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, password);

@@ -61,13 +61,13 @@ public class LoginController {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         UsersDAO user = new UsersDAO();
-        if (user.Login(username, password)) {
-            Users a = new Users(username, password);
+
+        if (user.Login(username, password).equalsIgnoreCase("admin") || user.Login(username, password).equalsIgnoreCase("nhanvien") || user.Login(username, password).equalsIgnoreCase("ketoan")) {
+            Users a = new Users();
             model.addAttribute("user", a);
             HttpSession session = request.getSession(true);
             session.setAttribute("USER", username);
             session.setAttribute("PASS", password);
-
             ReportDAO rp = new ReportDAO();
             List<ReportPersonal> dsStaffs = new ArrayList<ReportPersonal>();
             dsStaffs = rp.showReportPersonal("");
@@ -120,7 +120,7 @@ public class LoginController {
     }
 
     @RequestMapping("fogetPass")
-    public String fogetPass(ModelMap model,  HttpServletRequest request) {
+    public String fogetPass(ModelMap model, HttpServletRequest request) {
         try {
             String username = request.getParameter("txtUser");
             String email = request.getParameter("txtEmail");
