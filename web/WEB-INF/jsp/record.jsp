@@ -31,7 +31,7 @@
     <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
         <!-- Navigation-->
-        <jsp:include page="/WEB-INF/jsp/nav.jsp"/>
+        <jsp:include page="nav.jsp"/>
 
         <div class="content-wrapper">
             <div class="container-fluid">
@@ -81,7 +81,6 @@
                                 </thead>
                                 <tbody>
                                     <c:forEach var="rows" items="${listRecord}">
-
                                         <tr>
                                             <td>${rows.id}</td>
                                             <td>${(rows.type==1? "Thành tích" : "Kỷ luật")}</td>
@@ -247,62 +246,62 @@
             <!-- Custom scripts for this page-->
             <script src="../js/sb-admin-datatables.min.js"></script>
             <script>
-                $(document).ready(function () {
-                    $('table tbody td #edit').click(function () {
-                        var link = $(this).attr("href");
-                        $.get(link, function (data) {
-                            var result = $('<div/>').append(data).find("#recordModal").html();
-                            $('#recordModal').html(result);
-                        });
-                    });
-                });
+                                    $(document).ready(function () {
+                                        $('table tbody td #edit').click(function () {
+                                            var link = $(this).attr("href");
+                                            $.get(link, function (data) {
+                                                var result = $('<div/>').append(data).find("#recordModal").html();
+                                                $('#recordModal').html(result);
+                                            });
+                                        });
+                                    });
 
-                $(document).ready(function () {
-                    $('table tbody td #insert').click(function () {
-                        var link = $(this).attr("href");
-                        $.get(link, function (data) {
-                            var result = $('<div/>').append(data).find("#insertRecordModal").html();
-                            $('#insertRecordModal').html(result);
-                        });
-                    });
-                });
+                                    $(document).ready(function () {
+                                        $('table tbody td #insert').click(function () {
+                                            var link = $(this).attr("href");
+                                            $.get(link, function (data) {
+                                                var result = $('<div/>').append(data).find("#insertRecordModal").html();
+                                                $('#insertRecordModal').html(result);
+                                            });
+                                        });
+                                    });
 
-                $(document).ready(function () {
-                    $('table tbody td #delete').click(function () {
-                        var link = $(this).attr("href");
-                        $.get(link, function (data) {
-                            var result = $('<div/>').append(data).find("#deleteRecordModal").html();
-                            $('#deleteRecordModal').html(result);
-                        });
-                    });
-                });
+                                    $(document).ready(function () {
+                                        $('table tbody td #delete').click(function () {
+                                            var link = $(this).attr("href");
+                                            $.get(link, function (data) {
+                                                var result = $('<div/>').append(data).find("#deleteRecordModal").html();
+                                                $('#deleteRecordModal').html(result);
+                                            });
+                                        });
+                                    });
 
-                function val() {
-                
-                    if (document.getElementById("txtReason").value == "") {
-                        alert("Lý do đủ không được để trống");
-                        return false;
-                    }
-                    if (document.getElementById("txtStaffID").value == "") {
-                        alert("Mã nhân viên đủ không được để trống");
-                        return false;
-                    } else {
-                        return true;
-                    }
-                }
-                function val1() {
-                 
-                    if (document.getElementById("txtReason1").value == "") {
-                        alert("Lý do đủ không được để trống");
-                        return false;
-                    }
-                    if (document.getElementById("txtStaffID1").value == "") {
-                        alert("Mã nhân viên đủ không được để trống");
-                        return false;
-                    } else {
-                        return true;
-                    }
-                }
+                                    function val() {
+
+                                        if (document.getElementById("txtReason").value == "") {
+                                            alert("Lý do đủ không được để trống");
+                                            return false;
+                                        }
+                                        if (document.getElementById("txtStaffID").value == "") {
+                                            alert("Mã nhân viên đủ không được để trống");
+                                            return false;
+                                        } else {
+                                            return true;
+                                        }
+                                    }
+                                    function val1() {
+
+                                        if (document.getElementById("txtReason1").value == "") {
+                                            alert("Lý do đủ không được để trống");
+                                            return false;
+                                        }
+                                        if (document.getElementById("txtStaffID1").value == "") {
+                                            alert("Mã nhân viên đủ không được để trống");
+                                            return false;
+                                        } else {
+                                            return true;
+                                        }
+                                    }
             </script>
         </div>
     </body>

@@ -41,7 +41,7 @@
                         <button class="btn btn-primary btn-block">Login</button>
                     </form>
                     <div class="text-center">
-                        <a class="d-block small" href="login/showFogetPass.htm">Forgot Password?</a>
+                        <a class="d-block small" href="../login/showFogetPass.htm">Forgot Password?</a>
                     </div>
                 </div>
             </div>

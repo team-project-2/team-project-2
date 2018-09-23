@@ -151,17 +151,4 @@ public class RecordController {
         return "record";
     }
 
-//    @RequestMapping("record")
-//    public String record(HttpServletRequest request, ModelMap model) {
-//        String staffid = request.getParameter("txtStaffId");
-//        String email = request.getParameter("txtEmail");
-//        RecordDAO record = new RecordDAO();
-//        List<Records> ds = new ArrayList<Records>();
-//        ds = record.showRecord("");
-//        model.addAttribute("listRecord", ds);
-//        Records a = new Records(staffid);
-//        model.addAttribute("record", a);
-//        model.addAttribute("email", email);
-//        return index(model);
-//    }
 }

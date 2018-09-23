@@ -57,17 +57,17 @@ public class LoginController {
     }
 
     @RequestMapping("loginIndex")
-    public String index(ModelMap model, HttpServletRequest request) {
+    public String index(ModelMap model, HttpServletRequest request, HttpSession session) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         UsersDAO user = new UsersDAO();
-
-        if (user.Login(username, password).equalsIgnoreCase("admin") || user.Login(username, password).equalsIgnoreCase("nhanvien") || user.Login(username, password).equalsIgnoreCase("ketoan")) {
-            Users a = new Users();
-            model.addAttribute("user", a);
-            HttpSession session = request.getSession(true);
+        if (user.Login(username, password).equalsIgnoreCase("admin")
+                || user.Login(username, password).equalsIgnoreCase("nhanvien")
+                || user.Login(username, password).equalsIgnoreCase("ketoan")) {
             session.setAttribute("USER", username);
             session.setAttribute("PASS", password);
+            session.setAttribute("ROLE", user.Login(username, password));
+
             ReportDAO rp = new ReportDAO();
             List<ReportPersonal> dsStaffs = new ArrayList<ReportPersonal>();
             dsStaffs = rp.showReportPersonal("");

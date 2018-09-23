@@ -5,16 +5,18 @@
  */
 package model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Admin
  */
 public class Users {
 
-    private String username;
-    private String password;
-    private String fullname;
-    private int role;
+    public String username;
+    public String password;
+    public String fullname;
+    public int role;
 
     public Users() {
     }
@@ -31,8 +33,6 @@ public class Users {
         this.password = password;
         this.fullname = fullname;
     }
-    
-    
 
     public String getUsername() {
         return username;
@@ -65,6 +65,5 @@ public class Users {
     public void setRole(int role) {
         this.role = role;
     }
-
 
 }

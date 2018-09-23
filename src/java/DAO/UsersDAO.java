@@ -105,14 +105,15 @@ public class UsersDAO {
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
+//                String usernameDB = rs.getString(1);
+//                String passwordDB = rs.getString(2);
+//                String fullnameDB = rs.getString(3);
                 int roleDB = rs.getInt(4);
-                Users a = new Users();
-                a.setRole(roleDB);
                 if (roleDB == 1) {
                     return "admin";
-                }else if(roleDB == 2){
+                } else if (roleDB == 2) {
                     return "ketoan";
-                }else if(roleDB == 3){
+                } else if (roleDB == 3) {
                     return "nhanvien";
                 }
             }

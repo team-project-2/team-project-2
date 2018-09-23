@@ -26,8 +26,6 @@ public class Records {
         this.staffid = staffid;
     }
 
-   
-
     public Records(int id, int type, String reason, Date date, int staffid) {
         this.id = id;
         this.type = type;
